@@ -1,0 +1,32 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# USER PROFILE SAMPLE — Copy to data/profile.yaml and fill in your details.
+# This file is loaded ONLY from your local machine and is never transmitted.
+# Keep data/profile.yaml in .gitignore (it already is by default).
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Your legal full name as it would appear on broker sites
+full_name: "Jane Example Doe"
+
+# Primary email address
+email: "jane@example.com"
+
+# Phone number (digits and dashes accepted)
+phone: "555-123-4567"
+
+# Street address
+address: "123 Privacy Lane"
+city: "Anytown"
+state: "TX"
+zip_code: "78701"
+
+# Date of birth in YYYY-MM-DD format
+date_of_birth: "1985-06-15"
+
+# Additional name variations / former names / usernames to search for
+aliases:
+  - value: "Jane Doe"
+    kind: name
+  - value: "J. Doe"
+    kind: name
+  - value: "jane.doe@oldmail.example"
+    kind: email

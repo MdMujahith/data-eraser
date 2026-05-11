@@ -1,0 +1,48 @@
+# Core TUI & terminal
+textual>=0.52.0
+rich>=13.7.0
+
+# CLI
+typer[all]>=0.12.0
+
+# HTTP
+httpx[socks]>=0.27.0
+
+# HTML parsing
+selectolax>=0.3.21
+beautifulsoup4>=4.12.0
+
+# Config & validation
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+python-dotenv>=1.0.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# Encryption
+cryptography>=42.0.0
+
+# Scheduling
+apscheduler>=3.10.0
+
+# Platform utilities
+platformdirs>=4.2.0
+
+# Config files
+PyYAML>=6.0.1
+
+# Secrets (optional, graceful fallback)
+keyring>=25.0.0
+
+# Async file I/O
+aiofiles>=23.2.0
+
+# Dev / testing (install separately or via pip install -e ".[dev]")
+# pytest>=8.0.0
+# pytest-asyncio>=0.23.0
+# pytest-cov>=5.0.0
+# ruff>=0.4.0
+# mypy>=1.10.0
+# types-PyYAML>=6.0.0
+# types-beautifulsoup4>=4.12.0

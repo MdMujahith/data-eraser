@@ -1,0 +1,101 @@
+version: "1.0"
+brokers:
+  - name: "PeopleFinder (Demo)"
+    slug: "peoplefinder-demo"
+    category: "people_search"
+    base_url: "https://example-peoplefinder.invalid"
+    search_url_template: "https://httpbin.org/anything?q={last_name}+{first_name}&state={state}"
+    opt_out:
+      url: "https://example-peoplefinder.invalid/optout"
+      method: "manual"
+      notes: "Submit removal request via web form. No automation available."
+      requires_email_verification: false
+      requires_manual_captcha: true
+      automated_allowed: false
+    required_fields:
+      - first_name
+      - last_name
+    automated_search_allowed: true
+    manual_review_required: true
+    enabled: true
+    notes: "Demo adapter. Replace URLs with real broker endpoints."
+
+  - name: "DataAggregator (Demo)"
+    slug: "dataaggregator-demo"
+    category: "data_aggregator"
+    base_url: "https://example-dataagg.invalid"
+    opt_out:
+      url: "https://example-dataagg.invalid/privacy/remove"
+      method: "email"
+      email_address: "privacy@example-dataagg.invalid"
+      notes: "Email opt-out only. Include full name, address, and date of birth."
+      requires_email_verification: true
+      requires_manual_captcha: false
+      automated_allowed: false
+    required_fields:
+      - full_name
+      - email
+    automated_search_allowed: false
+    manual_review_required: true
+    enabled: true
+    notes: "Email-based opt-out. Response time typically 30 days."
+
+  - name: "BackgroundCheck (Demo)"
+    slug: "bgcheck-demo"
+    category: "background_check"
+    base_url: "https://example-bgcheck.invalid"
+    search_url_template: "https://httpbin.org/get?name={last_name}_{first_name}"
+    opt_out:
+      url: "https://example-bgcheck.invalid/remove"
+      method: "form"
+      notes: "Web form submission. CAPTCHA expected. Manual confirmation required."
+      requires_email_verification: true
+      requires_manual_captcha: true
+      automated_allowed: false
+    required_fields:
+      - first_name
+      - last_name
+      - state
+    automated_search_allowed: true
+    manual_review_required: true
+    enabled: true
+    notes: "Background check broker. Removal can take 30-90 days."
+
+  - name: "MarketingList (Demo)"
+    slug: "marketinglist-demo"
+    category: "marketing"
+    base_url: "https://example-mktlist.invalid"
+    opt_out:
+      url: "https://example-mktlist.invalid/unsubscribe"
+      method: "email"
+      email_address: "unsubscribe@example-mktlist.invalid"
+      notes: "Send removal request to opt-out email. Include all email addresses used."
+      requires_email_verification: false
+      requires_manual_captcha: false
+      automated_allowed: false
+    required_fields:
+      - email
+    automated_search_allowed: false
+    manual_review_required: true
+    enabled: true
+
+  - name: "PublicRecords (Demo)"
+    slug: "publicrecords-demo"
+    category: "public_records"
+    base_url: "https://example-pubrecords.invalid"
+    opt_out:
+      url: "https://example-pubrecords.invalid/suppression"
+      method: "manual"
+      notes: >
+        Requires proof of identity (redacted government ID).
+        Submit via secure upload portal. Processing: 45-60 days.
+      requires_email_verification: true
+      requires_manual_captcha: true
+      automated_allowed: false
+    required_fields:
+      - full_name
+      - address
+      - date_of_birth
+    automated_search_allowed: false
+    manual_review_required: true
+    enabled: true
